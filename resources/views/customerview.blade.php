@@ -9,32 +9,28 @@
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<center><h1>Student Data</h1></center>
+<center><h1>Customer Data</h1></center>
 <table class="table table-striped table-hove">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">LastName</th>
-      <th scope="col">Email</th>
-      <th scope="col">Surname</th>
-      <th scope="col">Country</th>
+      <th scope="col">Name</th>
+        <th scope="col">City</th>
+      <th scope="col">Phone</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-  @foreach($students as $student)
+    @foreach($customer as $customers)
     <tr>
-      <td >{{$loop->index+1}}</td>
-      <td>{{$student->name}}</td>
-      <td>{{$student->lastname}}</td>
-      <td>{{$student->email}}</td>
-      <td>{{$student->surname}}</td>
-      <td>{{$student->country}}</td>
-      <td>
-        <a href="{{url('edit',$student->id)}}" class="btn btn-sm btn-success">EDIT</a>
-        <a href="{{url('delete',$student->id)}}" class="btn btn-sm btn-danger">Delete</a>
-      </td>
+    <td >{{$loop->index+1}}</td>
+   <td>{{$customers->customer_name}}</td>
+   <td>{{$customers->city}}</td>
+   <td>{{$customers->phone}}</td>
+   <td>
+    <a href="{{url('edit',$customers->id)}}" class="btn btn-sm btn-success">EDIT</a>
+    <a href="{{url('delete',$customers->id)}}" class="btn btn-sm btn-danger">Delete</a>
+  </td>
     </tr>
     @endforeach
   </tbody>

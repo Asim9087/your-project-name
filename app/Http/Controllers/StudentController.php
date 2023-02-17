@@ -31,7 +31,7 @@ class StudentController extends Controller
 
    function edit($id)
    {
-    $student = Student::where('student_id',$id)->first();
+    $student = Student::where('id',$id)->first();
     return view('studentupdate',['student'=>$student]);
    }
 
@@ -44,8 +44,7 @@ class StudentController extends Controller
            $surname = $req->input('surname');
            $country = $req->input('country');
 
-           $isupdate = Student::where('student_id',$id)->update(['name'=>$name,'lastname'=>$lastname,'email'=>$email,'surname'=>$surname,'country'=>$country,]);
-
+           $isupdate = Student::where('id',$id)->update(['name'=>$name,'lastname'=>$lastname,'email'=>$email,'surname'=>$surname,'country'=>$country,]);
 
 
         if($isupdate)
@@ -56,7 +55,7 @@ class StudentController extends Controller
     
    function delete_data($id)
    {
-        $delete_data = Student::where('student_id',$id)->delete();
+        $delete_data = Student::where('id',$id)->delete();
         if($delete_data)
         return view('student');    
         // return $id;
@@ -64,6 +63,6 @@ class StudentController extends Controller
 
     function get_data()
     {
-    return University::where('student_id',3)->first();   
+    // return University::where('student_id',3)->first();   
     }    
 }

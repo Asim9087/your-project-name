@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,7 @@ Route::get('/edit/{id}',[StudentController::class,'edit'])->name('edit');
 Route::post('/dataupdate/{id}',[StudentController::class,'update'])->name('update');
 
 Route::get('/delete/{id}',[StudentController::class,'delete_data'])->name('delete_data');
-Route::get('/user_data',[StudentController::class,'get_data'])->name('get_data');
+// Route::get('/user_data',[StudentController::class,'get_data'])->name('get_data');
+Route::get('get_data',[CustomerController::class,'index'])->name('index');
+Route::post('customerprofile',[CustomerController::class,'insert_data'])->name('insert_data');
+Route::get('customerview',[CustomerController::class,'fetch_data'])->name('fetch_data');
