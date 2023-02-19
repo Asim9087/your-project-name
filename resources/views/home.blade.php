@@ -3,8 +3,16 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-                <a href="{{'student'}}" name="add" >add</a>
-        
+        <div class="button">
+            <tr>
+                <td>
+                <a href="{{'student'}}" name="add"class="btn btn-success" style="width:200px;">add student</a>
+                <a href="{{'student'}}" name="add"class="btn btn-success" style="width:200px;">add user</a>
+                <a href="{{'add_product'}}" name="add"class="btn btn-warning" style="width:200px;">add product</a>
+                <a href="{{'student'}}" name="add"class="btn btn-info" style="width:200px;">add category</a>
+            </td>
+            </tr>    
+            </div>
             <div class="card" style="margin-top:20px;">
                 <div class="card-header">{{ __('Dashboard') }}</div>
                 <div class="card-body">

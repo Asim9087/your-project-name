@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,5 @@ Route::get('/delete/{id}',[StudentController::class,'delete_data'])->name('delet
 Route::get('get_data',[CustomerController::class,'index'])->name('index');
 Route::post('customerprofile',[CustomerController::class,'insert_data'])->name('insert_data');
 Route::get('customerview',[CustomerController::class,'fetch_data'])->name('fetch_data');
+
+Route::get('add_product',[ProductController::class,'add_product'])->name('add_product');
