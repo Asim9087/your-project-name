@@ -8,8 +8,8 @@
                 <td>
                 <a href="{{'student'}}" name="add"class="btn btn-success" style="width:200px;">add student</a>
                 <a href="{{'student'}}" name="add"class="btn btn-success" style="width:200px;">add user</a>
-                <a href="{{'add_product'}}" name="add"class="btn btn-warning" style="width:200px;">add product</a>
-                <a href="{{'student'}}" name="add"class="btn btn-info" style="width:200px;">add category</a>
+                <a href="{{'product_form'}}" name="add"class="btn btn-warning" style="width:200px;">add product</a>
+                <a href="{{'add_category'}}" name="add"class="btn btn-info" style="width:200px;">add category</a>
             </td>
             </tr>    
             </div>

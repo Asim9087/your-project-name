@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +36,14 @@ Route::get('get_data',[CustomerController::class,'index'])->name('index');
 Route::post('customerprofile',[CustomerController::class,'insert_data'])->name('insert_data');
 Route::get('customerview',[CustomerController::class,'fetch_data'])->name('fetch_data');
 
-Route::get('add_product',[ProductController::class,'add_product'])->name('add_product');
+Route::get('product_form',[ProductController::class,'product_form'])->name('product_form');
+Route::post('add_product',[ProductController::class,'add_product'])->name('add_product');
+Route::get('retrive_product',[ProductController::class,'retrive_product'])->name('retrive_product');
+Route::get('edit_product/{id}',[ProductController::class,'edit_product'])->name('edit_product');
+Route::post('/update_product/{id}',[ProductController::class,'update_product'])->name('update_product');
+
+Route::get('add_category',[CategoryController::class,'add_category'])->name('add_category');
+Route::post('insert_category',[CategoryController::class,'insert_category'])->name('insert_category');
+Route::get('insert_category',[CategoryController::class,'insert_category'])->name('insert_category');
+Route::get('/edit/{id}',[CategoryController::class,'edit'])->name('edit');
+Route::post('/update_category/{id}',[CategoryController::class,'update_category'])->name('update_category');
