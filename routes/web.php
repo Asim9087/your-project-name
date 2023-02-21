@@ -31,19 +31,25 @@ Route::get('/edit/{id}',[StudentController::class,'edit'])->name('edit');
 Route::post('/dataupdate/{id}',[StudentController::class,'update'])->name('update');
 
 Route::get('/delete/{id}',[StudentController::class,'delete_data'])->name('delete_data');
-// Route::get('/user_data',[StudentController::class,'get_data'])->name('get_data');
 Route::get('get_data',[CustomerController::class,'index'])->name('index');
 Route::post('customerprofile',[CustomerController::class,'insert_data'])->name('insert_data');
 Route::get('customerview',[CustomerController::class,'fetch_data'])->name('fetch_data');
 
-Route::get('product_form',[ProductController::class,'product_form'])->name('product_form');
-Route::post('add_product',[ProductController::class,'add_product'])->name('add_product');
+//product route//
+Route::get('product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
+Route::get('product/list',[ProductController::class,'list'])->name('product.list');
+Route::post('product/insert',[ProductController::class,'insert'])->name('product.insert');
+Route::get('product/list/id/{id}',[ProductController::class,'list'])->name('product.list.id');
 Route::get('retrive_product',[ProductController::class,'retrive_product'])->name('retrive_product');
 Route::get('edit_product/{id}',[ProductController::class,'edit_product'])->name('edit_product');
 Route::post('/update_product/{id}',[ProductController::class,'update_product'])->name('update_product');
 
-Route::get('add_category',[CategoryController::class,'add_category'])->name('add_category');
-Route::post('insert_category',[CategoryController::class,'insert_category'])->name('insert_category');
+
+//category route//
+Route::get('category/list',[CategoryController::class,'list'])->name('category.list');
+Route::get('category/list/id/{id}',[CategoryController::class,'list'])->name('category.list.id');
+Route::post('category/insert',[CategoryController::class,'insert'])->name('category.insert');
 Route::get('insert_category',[CategoryController::class,'insert_category'])->name('insert_category');
-Route::get('/edit/{id}',[CategoryController::class,'edit'])->name('edit');
+Route::get('category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
 Route::post('/update_category/{id}',[CategoryController::class,'update_category'])->name('update_category');
+Route::get('category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');

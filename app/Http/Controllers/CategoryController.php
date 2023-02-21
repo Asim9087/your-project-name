@@ -6,28 +6,28 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    function add_category()
-    {
-        return view('addcategory');
+    function list(Request $req)
+    {     
+        $id = $req->id;
+        $single = Category::find($id);
+        $category = Category::all();
+        return view('addcategory',compact('category','single'));
     }
 
-    function insert_category(Request $req)
+    function insert(Request $req)
     {
         $category = new Category();
         $category->category_name = $req['category_name'];
         $category->company = $req['company'];
         $category->save();
-        $category = Category::all();
-        return view('showcategory',['category'=>$category]);
-        // $customer = Category::all();
-        // return view('showcategory');
+        return back()->with('success','category add succefully');
 
     }
 
-    function edit($id)
+    function edit(Request $req)
     {
-        $category = Category::where('id',$id)->first();
-    return view('updatecategory',['category'=>$category]);
+        $single = Category::where('id',$id)->first();
+        return  redirect()->route('category.list',compact('single'));
     }
 
     function update_category(Request $req)
@@ -38,9 +38,21 @@ class CategoryController extends Controller
         $category = Category::where('id',$id)->update(['category_name'=>$category_name,'company'=>$company,]);
         
         if($category)
-
-        // return view('showcategory');
+        return  redirect()->route('category.list')->with('success','category update succefully');
         echo '<h1>update succefuuly</h1>';
    }
+
+
+    function delete($id)
+    {
+        // dd($id)
+        $delete_data = Category::where('id',$id)->delete();
+        if($delete_data)
+        {
+            return  redirect()->route('category.list')->with('success','category delete succefuuly');
+        }    
+
     }
+
+}
 

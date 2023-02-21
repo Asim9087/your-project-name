@@ -10,14 +10,17 @@
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     
-{{-- <div class="row mb-3">
-    <a href="{{'retrive_product'}}" name="add"class="btn btn-success" style="width:200px;margin-left: 85%;">View Product</a>
-</div> --}}
     <div class="row">
     <div class="container" style="border:2px solid rgba(255, 255, 255, 0.205); margin-top:20px;">
         <center><h1>Add Product</h1>
         <form action="{{env('APP_URL')}}update_product/{{$product->id}}" method="POST">
             @csrf
+
+            @if(session()->has('success'))
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+        @endif
             <div class="row mb-3">
                 <label for="productname" class="col-md-4 col-form-label text-md-end">Product Name</label>
             <div class="col-md-6">
