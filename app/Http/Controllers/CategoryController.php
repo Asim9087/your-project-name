@@ -45,13 +45,20 @@ class CategoryController extends Controller
 
     function delete($id)
     {
-        // dd($id)
         $delete_data = Category::where('id',$id)->delete();
         if($delete_data)
         {
             return  redirect()->route('category.list')->with('success','category delete succefuuly');
         }    
 
+    }
+
+    function view(Request $req)
+    {
+        $id = $req->id;
+        $single = Category::where('id',$id)->first();
+        // return $single;
+        return view('viewsinglecategory',compact('single'));
     }
 
 }

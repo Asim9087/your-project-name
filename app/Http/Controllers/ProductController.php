@@ -13,7 +13,7 @@ class ProductController extends Controller
     {
         $id = $req->id;
         $single = Product::find($id);
-        $product =Product::select('products.id', 'products.productname', 'products.product_description', 'categories.category_name')
+        $product =Product::select('products.id','products.category_id','products.productname', 'products.product_description', 'categories.category_name')
         ->join('categories', 'categories.id', '=', 'products.category_id')
         ->get();
         $category = Category::all();

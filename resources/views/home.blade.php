@@ -6,10 +6,11 @@
         <div class="button">
             <tr>
                 <td>
-                <a href="{{'student'}}" name="add"class="btn btn-success" style="width:200px;">add student</a>
-                <a href="{{'student'}}" name="add"class="btn btn-success" style="width:200px;">add user</a>
-                <a href="{{route('product.list')}}" name="add"class="btn btn-warning" style="width:200px;">add product</a>
-                <a href="{{route('category.list')}}" name="add"class="btn btn-info" style="width:200px;">add category</a>
+                {{-- <a href="{{'student'}}" name="add"class="btn btn-success" style="width:200px;">add student</a> --}}
+                <a href="{{'student'}}" name="add"class="btn btn-primary" style="width:200px;">add user</a>
+                <a href="{{route('product.list')}}" name="add"class="btn btn-primary" style="width:200px;">add product</a>
+                <a href="{{route('category.list')}}" name="add"class="btn btn-secondary" style="width:200px;">add category</a>
+                <a href="{{route('order.list')}}" name="add"class="btn btn-secondary" style="width:200px;">Product Order</a>
             </td>
             </tr>    
             </div>

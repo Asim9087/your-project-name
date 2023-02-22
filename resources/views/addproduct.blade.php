@@ -47,7 +47,7 @@ if($single != null)
                 <select class="form-select form-select-md" name="category_id">
                     <option selected>Select Category</option>
                     @foreach ($category as $categorys)
-                    <option value="{{$categorys->id}}">{{$categorys->category_name}}</option>
+                    <option value="{{$categorys->id}}"  {{ $categorys->id == $single->category_id ? 'selected' : '' }}>{{$categorys->category_name}}</option>
                     @endforeach
                 </select>
             </div>

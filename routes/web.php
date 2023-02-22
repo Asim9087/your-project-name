@@ -5,6 +5,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,3 +54,10 @@ Route::get('insert_category',[CategoryController::class,'insert_category'])->nam
 Route::get('category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
 Route::post('/update_category/{id}',[CategoryController::class,'update_category'])->name('update_category');
 Route::get('category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
+Route::get('category/view/{id}',[CategoryController::class,'view'])->name('category.view');
+
+
+//order product//
+
+Route::get('order/list',[OrderController::class,'list'])->name('order.list');
+Route::post('order/insert',[OrderController::class,'insert'])->name('order.insert');

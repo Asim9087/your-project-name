@@ -96,6 +96,7 @@
             <td>
                 <a href="{{ route('category.list.id',$categorys->id) }}" class="btn btn-sm btn-success">EDIT</a>
                 <a href="{{route('category.delete',$categorys->id)}}" class="btn btn-sm btn-danger">Delete</a>
+                <a href="{{route('category.view',$categorys->id)}}" class="btn btn-sm btn-primary">View</a>
             </td>
         </tr>
         @endforeach
